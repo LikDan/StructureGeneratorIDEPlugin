@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "type": "FOLDER",
+      "name": "test1"
+    },
+    {
+      "type": "FOLDER",
+      "name": "test2/test1"
+    },
+    {
+      "type": "FILE",
+      "name": "file.txt"
+    },
+    {
+      "type": "FILE",
+      "name": "test1/file.txt"
+    },
+    {
+      "type": "FILE",
+      "name": "test3/file.txt"
+    },
+    {
+      "type": "FILE",
+      "name": "file2.txt",
+      "file": {
+        "content": "file-content {var}, {var2}"
+      }
+    },
+    {
+      "type": "FILE",
+      "name": "file3.txt",
+      "file": {
+        "contentFile": "file2.txt"
+      }
+    }
+  ],
+  "vars": [
+    {
+      "key": "var",
+      "value": "var-value"
+    }
+  ]
+}

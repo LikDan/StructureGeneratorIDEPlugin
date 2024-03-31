@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <name id="name">NAME</name>
+    <items>
+        <type>FOLDER</type>
+        <name>test1</name>
+    </items>
+    <items>
+        <type>FOLDER</type>
+        <name>test2/test1</name>
+    </items>
+    <items>
+        <type>FILE</type>
+        <name>file.txt</name>
+    </items>
+    <items>
+        <type>FILE</type>
+        <name>test1/file.txt</name>
+    </items>
+    <items>
+        <type>FILE</type>
+        <name>test3/file.txt</name>
+    </items>
+    <items>
+        <type>FILE</type>
+        <name>file2.txt</name>
+        <file>
+            <content>file-content {var}, {var2}</content>
+        </file>
+    </items>
+    <items>
+        <type>FILE</type>
+        <name>file3.txt</name>
+        <file>
+            <contentFile>file2.txt</contentFile>
+        </file>
+    </items>
+    <vars>
+        <key>var</key>
+        <value>var-value</value>
+    </vars>
+</config>

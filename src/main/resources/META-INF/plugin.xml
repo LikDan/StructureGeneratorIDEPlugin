@@ -1,0 +1,20 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>likco.plugins.structuregenerator</id>
+    <name>Structure Generator</name>
+    <vendor email="likdan.official@gmail.com">LikDan</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <group id="generate"
+               popup="false">
+            <add-to-group anchor="after"
+                          group-id="NewGroup" relative-to-action="NewDir" />
+            <action class="likco.plugins.structuregenerator.handlers.ActionGenerate"
+                    description="Generate files and folders from config"
+                    id="generate-structure"
+                    text="Generate Structure"/>
+        </group>
+    </actions>
+</idea-plugin>
