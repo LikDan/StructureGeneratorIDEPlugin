@@ -10,6 +10,8 @@ data class Config(
     val items: MutableList<ConfigItem> = mutableListOf(),
     @field:XmlElement(name = "vars")
     val vars: MutableList<ConfigVar> = mutableListOf(),
+    @field:XmlElement(name = "command")
+    val command: String = "",
 )
 
 enum class ConfigItemType {
@@ -37,5 +39,5 @@ data class ConfigVar(
     @field:XmlElement(name = "key")
     val key: String = "",
     @field:XmlElement(name = "value")
-    val value: String = ""
+    val value: String = "",
 )

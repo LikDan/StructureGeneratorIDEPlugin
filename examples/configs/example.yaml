@@ -17,6 +17,9 @@ items:
     name: file3.txt
     file:
       contentFile: file2.txt
+
 vars:
   - key: var
     value: var-value
+
+command: echo 'done'

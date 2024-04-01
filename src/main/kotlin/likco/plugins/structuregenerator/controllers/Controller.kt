@@ -2,6 +2,7 @@ package likco.plugins.structuregenerator.controllers
 
 import likco.plugins.structuregenerator.controllers.dto.RequestGenerateDTO
 import likco.plugins.structuregenerator.controllers.models.GenerationInfo
+import likco.plugins.structuregenerator.repositories.command.CommandRepository
 import likco.plugins.structuregenerator.repositories.config.ConfigRepository
 import likco.plugins.structuregenerator.repositories.config.entities.ConfigItem
 import likco.plugins.structuregenerator.repositories.config.entities.ConfigItemType
@@ -16,7 +17,7 @@ object Controller {
 
         val config = ConfigRepository.getConfigFromFile(configFile)
 
-        val workDir = "${request.workDir}/${request.directoryName}"
+        val workDir = request.directoryName
         FileSystemRepository.createDir(workDir)
 
         val variables = request.variables.toMutableMap()
@@ -32,6 +33,11 @@ object Controller {
         )
 
         config.items.forEach { processItem(generationInfo, it) }
+
+        if (config.command != "") {
+            val command = fillStringWithVariables(config.command, variables)
+            CommandRepository.exec(request.workDir, command)
+        }
     }
 
     private fun processItem(request: GenerationInfo, item: ConfigItem) {

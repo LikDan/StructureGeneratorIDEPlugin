@@ -39,4 +39,5 @@
         <key>var</key>
         <value>var-value</value>
     </vars>
+    <command>echo 'done'</command>
 </config>

@@ -40,5 +40,6 @@
       "key": "var",
       "value": "var-value"
     }
-  ]
+  ],
+  "command": "echo 'done'"
 }
